@@ -1,0 +1,7 @@
+flask
+fsspec
+gcsfs
+stringcase
+gunicorn==20.1.0
+pandas
+pyarrow

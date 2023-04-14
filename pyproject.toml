@@ -1,0 +1,14 @@
+[project]
+name = "nhl_stats"
+version = "0.0.1"
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "flask", 
+    "fsspec", 
+    "gcsfs", 
+    "stringcase", 
+    "gunicorn==20.1.0", 
+    "pyarrow"
+]
+build-backend = "setuptools.build_meta"
