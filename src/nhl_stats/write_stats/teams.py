@@ -20,8 +20,8 @@ def write_team_stats_data(season:str):
 
     team_stats_abs_df = pd.DataFrame.from_dict(team_stats_absolute)
     team_stats_rel_df = pd.DataFrame.from_dict(team_stats_relative)
-    write_data(dataset_name="nhl_team_stats_absolute", df=team_stats_abs_df, season=season)
-    write_data(dataset_name="nhl_team_stats_relative", df=team_stats_rel_df, season=season)
+    write_data(dataset_name="team_stats_absolute", df=team_stats_abs_df, season=season)
+    write_data(dataset_name="team_stats_relative", df=team_stats_rel_df, season=season)
 
 
 def write_team_roster_data(season:str):
@@ -44,7 +44,7 @@ def write_team_roster_data(season:str):
         team_rosters.extend(roster)
 
     team_rosters_df = pd.DataFrame.from_dict(team_rosters)
-    write_data(dataset_name="nhl_team_rosters", df=team_rosters_df, season=season)
+    write_data(dataset_name="team_rosters", df=team_rosters_df, season=season)
 
 
 def write_team_base_data(season: str):
@@ -57,7 +57,8 @@ def write_team_base_data(season: str):
     column_map = {x: snakecase(x) for x in df.keys()}
     df.rename(columns=column_map, inplace=True)
     df.rename(columns={"id": "team_id"}, inplace=True)
-    write_data(dataset_name="nhl_teams", season=season, df=df)
+    
+    write_data(dataset_name="teams", season=season, df=df)
 
 def write_team_data(season: Optional[str]) -> None:
     write_team_base_data(season)

@@ -6,5 +6,5 @@ from nhl_stats.write_stats.write import write_data
 def write_seasons_data():
     seasons = get_seasons()
     df = pd.json_normalize(seasons, sep='_')
-    write_data(dataset_name="nhl_seasons", df=df, season=None)
+    write_data(dataset_name="seasons", df=df, season=None)
 

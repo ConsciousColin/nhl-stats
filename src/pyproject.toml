@@ -12,3 +12,6 @@ requires = [
     "pyarrow"
 ]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["nhl_stats"]

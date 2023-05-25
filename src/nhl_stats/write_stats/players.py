@@ -13,4 +13,4 @@ def write_players_data(season:str):
             player.pop('link')
             player_data.append(player)
     df = pd.json_normalize(player_data, sep='_')
-    write_data(dataset_name="nhl_players", df=df, season=season)
+    write_data(dataset_name="players", df=df, season=season)

@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, request
+from nhl_stats.write_stats import seasons
 from nhl_stats.write_stats import teams
 from nhl_stats.write_stats import players
 from nhl_stats.write_stats import games
@@ -23,6 +24,11 @@ def write_players_data():
 @app.route("/games/write")
 def write_games_data():
     games.write_games_data(season=request.args.get('season'))
+    return "Success!"
+
+@app.route("/seasons/write")
+def write_seasons_data():
+    seasons.write_seasons_data()
     return "Success!"
 
 if __name__ == "__main__":
