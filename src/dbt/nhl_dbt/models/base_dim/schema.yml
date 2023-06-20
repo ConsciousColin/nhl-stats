@@ -1,0 +1,19 @@
+
+version: 2
+
+models:
+  - name: players
+    description: "A dim table of all players"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+sources:
+  - name: nhl_stats
+    meta:
+      external_location: "parquet_scan('gs://nhl-data-snapshots/{name}/*/*.parquet', hive_partitioning=1)"
+    tables:
+      - name: nhl_players

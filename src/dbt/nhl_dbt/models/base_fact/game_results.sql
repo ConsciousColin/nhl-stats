@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='external', format='parquet')}}
 
 with src as (
     select * from {{ source('nhl_stats', 'game_boxscores') }}
